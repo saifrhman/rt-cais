@@ -5,22 +5,49 @@ Real- Time Conversation AI Inference System
 
 ```mermaid
 flowchart TD
-    A[Client / Simulator<br/>(Live chat / text stream<br/>partial utterances)]
+    A["Client / Simulator
+(Live chat / text stream
+partial utterances)"]
     
-    B[API Gateway<br/>(FastAPI, async)<br/>• request validation<br/>• timeout handling<br/>• request tracing]
+    B["API Gateway
+(FastAPI, async)
+• request validation
+• timeout handling
+• request tracing"]
     
-    C[Conversation Manager<br/>• rolling context window<br/>• session state<br/>• partial input handling<br/>(Redis / in-memory)]
+    C["Conversation Manager
+• rolling context window
+• session state
+• partial input handling
+(Redis / in-memory)"]
     
-    D[Inference Orchestrator<br/>• routing logic<br/>• confidence thresholds<br/>• fallback decisions]
+    D["Inference Orchestrator
+• routing logic
+• confidence thresholds
+• fallback decisions"]
     
-    E[Intent ML Model<br/>(PyTorch)]
-    F[Sentiment ML Model<br/>(PyTorch)]
+    E["Intent ML Model
+(PyTorch)"]
     
-    G[Post-Processing Layer<br/>• confidence calibration<br/>• business rules<br/>• safe defaults]
+    F["Sentiment ML Model
+(PyTorch)"]
     
-    H[Response Layer<br/>• intent<br/>• sentiment<br/>• confidence<br/>• fallback flag]
+    G["Post-Processing Layer
+• confidence calibration
+• business rules
+• safe defaults"]
     
-    I[Monitoring & Observability<br/>• latency (p50/p95)<br/>• error rates<br/>• drift signals<br/>• fallback frequency]
+    H["Response Layer
+• intent
+• sentiment
+• confidence
+• fallback flag"]
+    
+    I["Monitoring & Observability
+• latency (p50 / p95)
+• error rates
+• drift signals
+• fallback frequency"]
 
     A --> B
     B --> C
@@ -31,4 +58,5 @@ flowchart TD
     F --> G
     G --> H
     H --> I
+
 ```
