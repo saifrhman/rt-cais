@@ -132,3 +132,26 @@ Raw model outputs are passed through a post-processing layer that applies:
 
 This layer prevents unsafe or misleading outputs from propagating directly to downstream systems and ensures that all responses are explainable and auditable.
 
+### Response Layer
+Responses include not only predictions but also operational metadata, such as:
+- confidence scores
+- fallback indicators
+- end-to-end latency measurements
+
+This enables transparent downstream decision-making and supports auditability and debugging in production environments.
+
+### Monitoring and Observability
+The system emits structured metrics and logs covering:
+- p50 and p95 latency
+- error and timeout rates
+- fallback frequency
+- prediction distribution shifts.
+
+Fallback frequency and confidence degradation are treated as leading indicators of model drift or data quality issues. Monitoring is designed to support intervention decisions, not just passive reporting.
+
+## Architectural Principles
+- ** Separation of concerns **: orchestration, state, and inference are decoupled.
+- ** Latency-first design **: bounded state and async processing prevent tail-latency amplification.
+- ** Failure-aware behaviour **: safe defaults are preferred over brittle predictions.
+- ** Production ownership **: observability and rollback are first-class concerns.
+
