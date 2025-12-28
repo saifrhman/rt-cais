@@ -123,3 +123,12 @@ The system uses independent, stateless models for:
 - sentiment analysis.
 
 Models are loaded once at service startup and optimized for predictable inference latency. Separation of models allows independent optimisation, rollback, and versioning, and avoids coupling unrelated performance characteristics.
+
+### Post Processing and Safety Layer
+Raw model outputs are passed through a post-processing layer that applies:
+- confidence calibration,
+- rule-based constraints,
+- safe default behaviours.
+
+This layer prevents unsafe or misleading outputs from propagating directly to downstream systems and ensures that all responses are explainable and auditable.
+
