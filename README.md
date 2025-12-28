@@ -62,7 +62,7 @@ partial utterances)"]
 ```
 
 ## Overview
-This system is designed as a real-time conversational AI inference service optimized for low-latency, high-availability environments. It processes partial conversational inputs and produces early intent and sentiment predictions while maintaining predictable performance, safe degradation, and full operational observability.
+This system is designed as a real time conversational AI inference service optimized for low latency, high availability environments. It processes partial conversational inputs and produces early intent and sentiment predictions while maintaining predictable performance, safe degradation, and full operational observability.
 
 The architecture explicitly separates system orchestration, state management, and model inference, ensuring that model behaviour can be governed, monitored, and evolved independently of model weights.
 
@@ -87,7 +87,7 @@ The system prioritizes:
 ### Client / Conversation Simulator
 The client simulates live conversational behaviour by sending incremental, partial text inputs rather than complete sentences. This reflects real-world conversational systems where decisions must often be made before full user intent is expressed.
 
-This design enables early inference and allows the system to evaluate trade-offs between prediction confidence and response latency.
+This design enables early inference and allows the system to evaluate trade offs between prediction confidence and response latency.
 
 ### API Gateway (FastAPI, Async)
 The API Gateway serves as the system boundary and is responsible for:
@@ -103,7 +103,7 @@ The Conversation Manager maintains session-level conversational state, including
 - partial input aggregation,
 - bounded memory usage per session.
 
-State is intentionally constrained to prevent unbounded memory growth and latency degradation. The window size represents a deliberate trade-off between contextual richness and real-time performance.
+State is intentionally constrained to prevent unbounded memory growth and latency degradation. The window size represents a deliberate trade-off between contextual richness and real time performance.
 
 ### Inference Orchestrator
 The Inference Orchestrator is the central control layer of the system.
