@@ -150,8 +150,8 @@ The system emits structured metrics and logs covering:
 Fallback frequency and confidence degradation are treated as leading indicators of model drift or data quality issues. Monitoring is designed to support intervention decisions, not just passive reporting.
 
 ## Architectural Principles
-- ** Separation of concerns **: orchestration, state, and inference are decoupled.
-- ** Latency-first design **: bounded state and async processing prevent tail-latency amplification.
-- ** Failure-aware behaviour **: safe defaults are preferred over brittle predictions.
-- ** Production ownership **: observability and rollback are first-class concerns.
+- **Separation of concerns**: orchestration, state, and inference are decoupled.
+- **Latency first design**: bounded state and async processing prevent tail-latency amplification.
+- **Failure aware behaviour**: safe defaults are preferred over brittle predictions.
+- **Production ownership**: observability and rollback are first-class concerns.
 
